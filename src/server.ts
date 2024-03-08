@@ -1,5 +1,6 @@
 import AppDataSource from "./data-source";
 
+import createAdminService from "./services/admin/createAdmin.service";
 import app from "./app";
 
 import "dotenv/config";
@@ -17,5 +18,6 @@ import "dotenv/config";
 
   app.listen(PORT, () => {
     console.log(`Server running in port ${PORT}`);
+    createAdminService();
   });
 })();

@@ -20,7 +20,7 @@ export const userRoutes = () => {
 
   routes.delete("/:id", ensureAuthMiddleware, deleteUserController);
 
-  routes.get("/books/:id", listBooksOfProfileController);
+  routes.get("/orders/:id", ensureAuthMiddleware, listBooksOfProfileController);
 
   return routes;
 };

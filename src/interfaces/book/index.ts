@@ -4,7 +4,15 @@ export interface IBookRequest {
   published_date: Date;
   synopsis: string;
   pages: number;
-  available: boolean
+}
+
+export interface IBook {
+  title: string;
+  author: string;
+  published_date: Date;
+  synopsis: string;
+  pages: number;
+  available: boolean;
 }
 
 export interface IBookUpdate {
@@ -13,5 +21,5 @@ export interface IBookUpdate {
   published_date?: Date;
   synopsis?: string;
   pages?: number;
-  available?: boolean
+  available?: boolean;
 }

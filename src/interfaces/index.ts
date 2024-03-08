@@ -1,7 +1,7 @@
 import { IUserRequest, ISessionRequest, IUserUpdate } from "./user";
 import { IDecode } from "./token";
-import { IBookRequest, IBookUpdate } from "./book";
-import { IOrderRequest} from "./order";
+import { IBookRequest, IBookUpdate, IBook } from "./book";
+import { IOrderRequest, IOrder } from "./order";
 
 export {
   IUserRequest,
@@ -10,5 +10,7 @@ export {
   IDecode,
   IBookRequest,
   IBookUpdate,
+  IBook,
   IOrderRequest,
+  IOrder,
 };

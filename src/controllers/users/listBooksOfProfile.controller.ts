@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import listBooksOfProfileService from "../../services/users/listBooksOfProfile.service";
+import listOrdersOfProfileService from "../../services/users/listOrdersOfProfile.service";
 
-const listBooksOfProfileController = async (req: Request, res: Response) => {
+const listOrdersOfProfileController = async (req: Request, res: Response) => {
   const { id } = req.params;
 
-  const books = await listBooksOfProfileService(id);
+  const orders = await listOrdersOfProfileService(id);
 
-  res.status(200).json({ books });
+  res.status(200).json({ orders });
 };
 
-export default listBooksOfProfileController;
+export default listOrdersOfProfileController;
