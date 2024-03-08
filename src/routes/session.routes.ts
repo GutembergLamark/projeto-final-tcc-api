@@ -1,4 +1,4 @@
-/* import { Router } from "express";
+import { Router } from "express";
 import createSessionController from "../controllers/sessions/createSession.controller";
 
 import validateRequestMiddleware from "../middlewares/validateRequest.middleware";
@@ -14,4 +14,3 @@ export const sessionRoutes = () => {
   );
   return routes;
 };
- */

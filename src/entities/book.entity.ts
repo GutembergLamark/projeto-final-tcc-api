@@ -1,5 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import { Order } from "./order.entity";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("books")
 export class Book {
@@ -20,4 +19,7 @@ export class Book {
 
   @Column({ type: "int", nullable: false })
   pages: number;
+
+  @Column({ type: "boolean", nullable: false })
+  available: boolean;
 }

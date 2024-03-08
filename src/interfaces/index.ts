@@ -1,5 +1,14 @@
-import { IUserRequest, ISessionRequest } from "./user";
+import { IUserRequest, ISessionRequest, IUserUpdate } from "./user";
 import { IDecode } from "./token";
-import { IBookRequest } from "./book";
+import { IBookRequest, IBookUpdate } from "./book";
+import { IOrderRequest} from "./order";
 
-export { IUserRequest, ISessionRequest, IDecode, IBookRequest };
+export {
+  IUserRequest,
+  IUserUpdate,
+  ISessionRequest,
+  IDecode,
+  IBookRequest,
+  IBookUpdate,
+  IOrderRequest,
+};

@@ -17,14 +17,5 @@ import "dotenv/config";
 
   app.listen(PORT, () => {
     console.log(`Server running in port ${PORT}`);
-
-    const req = {
-      body: {
-        username: "admin",
-        email: "admin@email.com",
-        password: "admin",
-        cpf: "000.000.000-00",
-      },
-    };
   });
 })();

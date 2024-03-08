@@ -6,6 +6,7 @@ declare global {
       validatedBody: object;
       user: {
         id: string;
+        email: string
       };
     }
   }

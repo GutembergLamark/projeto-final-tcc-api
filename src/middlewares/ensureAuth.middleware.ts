@@ -33,7 +33,7 @@ const ensureAuthMiddleware = async (
       if (decode) {
         req.user = {
           id: decode.sub,
-          accountId: decode.accountId,
+          email: decode.email,
         };
       }
 

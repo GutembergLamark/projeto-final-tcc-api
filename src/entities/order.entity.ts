@@ -1,4 +1,11 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import { User } from "./user.entity";
 import { Book } from "./book.entity";
 
@@ -7,8 +14,8 @@ export class Order {
   @PrimaryGeneratedColumn("uuid")
   readonly id!: string;
 
-  @Column({ type: "date", nullable: false })
-  time: string;
+  @Column({ nullable: false })
+  days: number;
 
   @Column()
   created_at: Date;
@@ -16,6 +23,7 @@ export class Order {
   @ManyToOne(() => User, (user) => user.id)
   user: User;
 
-  @ManyToOne(() => Book, (book) => book.id)
+  @OneToOne(() => Book, { eager: true })
+  @JoinColumn()
   book: Book;
 }

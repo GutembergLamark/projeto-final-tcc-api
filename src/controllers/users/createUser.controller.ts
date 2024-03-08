@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { instanceToPlain } from "class-transformer";
 
 import createUserService from "../../services/users/createUser.service";
 
@@ -11,7 +12,7 @@ const createUserController = async (req: Request, res: Response) => {
 
   delete user.password;
 
-  return res.status(201).json({ user });
+  return res.status(201).json(instanceToPlain({ user }));
 };
 
 export default createUserController;

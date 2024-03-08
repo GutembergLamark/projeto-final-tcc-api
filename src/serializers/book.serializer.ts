@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
 import { Schema } from "yup";
+import { parse } from "date-fns/parse";
 
 import { IBookRequest } from "../interfaces";
 
@@ -13,7 +14,16 @@ export const createBookSchema: Schema<IBookRequest> = yup.object().shape({
     .string()
     .required("O autor é obrigatório")
     .max(100, "O nome do autor pode ter no máximo 100 caracters"),
-  published_date: yup.date().required("A data é obrigatória"),
+  published_date: yup
+    .date()
+    .transform(function (value, originalValue) {
+      if (this.isType(value)) {
+        return value;
+      }
+      const result = parse(originalValue, "dd-MM-yyyy", new Date());
+      return result;
+    })
+    .required("A data é obrigatória"),
   synopsis: yup
     .string()
     .required("A sinopse é obrigatória")

@@ -3,18 +3,19 @@ import { Book } from "../../entities/book.entity";
 import { AppError } from "../../errors/appError";
 import { IBookRequest } from "../../interfaces";
 
-const createUserService = async ({
+const createBookService = async ({
   title,
   author,
   published_date,
   synopsis,
+  pages,
 }: IBookRequest) => {
   const bookRepository = AppDataSource.getRepository(Book);
 
   const bookAlreadyExists = await bookRepository.findOneBy({ title });
 
   if (bookAlreadyExists) {
-    throw new AppError("Email already exists", 400);
+    throw new AppError("Book already exists", 400);
   }
 
   const book = bookRepository.create({
@@ -22,6 +23,8 @@ const createUserService = async ({
     author,
     published_date,
     synopsis,
+    pages,
+    available: true,
   });
 
   await bookRepository.save(book);
@@ -29,4 +32,4 @@ const createUserService = async ({
   return book;
 };
 
-export default createUserService;
+export default createBookService;
